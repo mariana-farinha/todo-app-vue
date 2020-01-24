@@ -17,8 +17,10 @@ new Vue({
       });
     },
     _addNewItem(item) {
-      this.todoItems.push(item);
-      this.newItem = "";
+      if (this.isNewItemValid(item)) {
+        this.todoItems.push(item);
+        this.newItem = "";
+      }
     },
     _removeItem(index) {
       this.todoItems[index].isDone = true;
@@ -27,6 +29,13 @@ new Vue({
       const itemMatch = this.todoItems.filter(elem => elem.id === item.id)[0];
       const index = this.todoItems.indexOf(itemMatch);
       this._removeItem(index);
+    },
+    onCleanButtonClicked(event) {
+      event.preventDefault();
+      this.todoItems = this.todoItems.filter(el => el.isDone !== true);
+    },
+    isNewItemValid(item) {
+      return item.label.trim() != "";
     }
   }
 });

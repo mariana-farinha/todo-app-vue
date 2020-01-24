@@ -25,13 +25,21 @@
       </ul>
       <form class="todo__form">
         <input class="todo__input" type="text" v-model="newItem" />
-        <button
-          class="todo__button--submit todo__button"
-          v-on:click="onAddButtonClicked"
-          type="submit"
-        >
-          Add
-        </button>
+        <div>
+          <button
+            class="todo__button--submit todo__button"
+            v-on:click="onAddButtonClicked"
+            type="submit"
+          >
+            Add
+          </button>
+          <button
+            class="todo__button--clean todo__button"
+            v-on:click="onCleanButtonClicked"
+          >
+            Clean Completed
+          </button>
+        </div>
       </form>
     </div>
     <script src="js/todo.js"></script>

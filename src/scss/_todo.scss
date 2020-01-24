@@ -73,6 +73,12 @@
   border-color: $secondary-color;
 }
 
+.todo__button--clean {
+  color: #fff;
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+
 .todo__form {
   margin-top: 3em;
   display: flex;
