@@ -6,16 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Todo App</title>
     <!-- development version, includes helpful console warnings -->
+    <link rel="stylesheet" href="css/app.css" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
+    <header class="top-banner">
+      <h1 class="top-banner__title">Todo</h1>
+    </header>
     <div class="todo">
       <ul class="todo__list">
-        <li v-for="item in todoItems" class="todo__list__item">{{item}}</li>
+        <li
+          v-on:click="onItemClicked(item)"
+          v-for="item in todoItems"
+          class="todo__list__item"
+        >
+          {{item.label}}
+        </li>
       </ul>
       <form class="todo__form">
         <input class="todo__input" type="text" v-model="newItem" />
-        <button class="todo__addButton" v-on:click="onAddNewItem" type="submit">
+        <button
+          class="todo__button--submit todo__button"
+          v-on:click="onAddButtonClicked"
+          type="submit"
+        >
           Add
         </button>
       </form>
