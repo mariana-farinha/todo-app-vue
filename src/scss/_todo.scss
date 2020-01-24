@@ -16,6 +16,10 @@
   max-width: 38rem;
 }
 
+.todo__list__item--done {
+  text-decoration: line-through;
+}
+
 .todo__input {
   max-width: 38rem;
   display: block;

@@ -10,6 +10,7 @@ new Vue({
       const inputField = document.querySelector(".todo__input");
       this._addNewItem({
         label: inputField.value,
+        isDone: false,
         id: Math.random()
           .toString(36)
           .substr(2, 9)
@@ -20,7 +21,7 @@ new Vue({
       this.newItem = "";
     },
     _removeItem(index) {
-      this.todoItems.splice(index, 1);
+      this.todoItems[index].isDone = true;
     },
     onItemClicked(item) {
       const itemMatch = this.todoItems.filter(elem => elem.id === item.id)[0];

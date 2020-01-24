@@ -18,7 +18,7 @@
         <li
           v-on:click="onItemClicked(item)"
           v-for="item in todoItems"
-          class="todo__list__item"
+          v-bind:class="{'todo__list__item': true, 'todo__list__item--done': item.isDone}"
         >
           {{item.label}}
         </li>
