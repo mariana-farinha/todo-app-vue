@@ -1,0 +1,18 @@
+@import "reset";
+@import "variables";
+@import "typography";
+@import "spacing";
+@import "todo";
+
+.top-banner {
+  background-color: $primary-color;
+}
+
+.top-banner__title {
+  font-family: $font-family;
+  font-size: $h1-font-size;
+  color: $white;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+}
