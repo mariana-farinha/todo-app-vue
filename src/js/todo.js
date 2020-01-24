@@ -5,7 +5,8 @@ Vue.component("todo-item", {
       this.$emit("done", this.item);
     }
   },
-  template: "<li v-on:click='onItemClicked'>{{item.label}}</li>"
+  template:
+    "<li class='todo__list__item' v-on:click='onItemClicked'>{{item.label}}</li>"
 });
 
 new Vue({

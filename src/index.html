@@ -19,7 +19,7 @@
           <todo-item
             v-on:done="onItemClicked($event)"
             v-for="item in todoItems"
-            v-bind:class="{'todo__list__item': true, 'todo__list__item--done': item.isDone}"
+            v-bind:class="{'todo__list__item--done': item.isDone}"
             v-bind:item="item"
           >
           </todo-item>
