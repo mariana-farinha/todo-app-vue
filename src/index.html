@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Todo App</title>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div class="todo">
+      <ul class="todo__list">
+        <li v-for="item in todoItems" class="todo__list__item">{{item}}</li>
+      </ul>
+      <form class="todo__form">
+        <input class="todo__input" type="text" v-model="newItem" />
+        <button class="todo__addButton" v-on:click="onAddNewItem" type="submit">
+          Add
+        </button>
+      </form>
+    </div>
+    <script src="scripts/todo.js"></script>
+  </body>
+</html>
