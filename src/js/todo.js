@@ -1,5 +1,15 @@
+Vue.component("todo-item", {
+  props: ["item"],
+  methods: {
+    onItemClicked() {
+      this.$emit("done", this.item);
+    }
+  },
+  template: "<li v-on:click='onItemClicked'>{{item.label}}</li>"
+});
+
 new Vue({
-  el: ".todo",
+  el: "#app",
   data: {
     todoItems: [],
     newItem: ""

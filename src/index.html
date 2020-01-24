@@ -10,37 +10,39 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-    <header class="top-banner">
-      <h1 class="top-banner__title">Todo</h1>
-    </header>
-    <div class="todo">
-      <ul class="todo__list">
-        <li
-          v-on:click="onItemClicked(item)"
-          v-for="item in todoItems"
-          v-bind:class="{'todo__list__item': true, 'todo__list__item--done': item.isDone}"
-        >
-          {{item.label}}
-        </li>
-      </ul>
-      <form class="todo__form">
-        <input class="todo__input" type="text" v-model="newItem" />
-        <div>
-          <button
-            class="todo__button--submit todo__button"
-            v-on:click="onAddButtonClicked"
-            type="submit"
+    <div id="app">
+      <header class="top-banner">
+        <h1 class="top-banner__title">Todo</h1>
+      </header>
+      <div class="todo">
+        <ul class="todo__list">
+          <todo-item
+            v-on:done="onItemClicked($event)"
+            v-for="item in todoItems"
+            v-bind:class="{'todo__list__item': true, 'todo__list__item--done': item.isDone}"
+            v-bind:item="item"
           >
-            Add
-          </button>
-          <button
-            class="todo__button--clean todo__button"
-            v-on:click="onCleanButtonClicked"
-          >
-            Clean Completed
-          </button>
-        </div>
-      </form>
+          </todo-item>
+        </ul>
+        <form class="todo__form">
+          <input class="todo__input" type="text" v-model="newItem" />
+          <div>
+            <button
+              class="todo__button--submit todo__button"
+              v-on:click="onAddButtonClicked"
+              type="submit"
+            >
+              Add
+            </button>
+            <button
+              class="todo__button--clean todo__button"
+              v-on:click="onCleanButtonClicked"
+            >
+              Clean Completed
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
     <script src="js/todo.js"></script>
   </body>
