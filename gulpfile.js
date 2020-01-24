@@ -41,10 +41,27 @@ function sass() {
     .pipe(gulp.dest(config.sass.DEST));
 }
 
-function server() {
+function server(done) {
   browserSync.init({
     server: config.DEST
   });
+  done();
 }
 
-exports.default = gulp.series(clean, moveHTML, sass, javascript, server);
+function watch(done) {
+  gulp
+    .watch([config.js.SRC])
+    .on("all", gulp.series(javascript, browserSync.reload));
+
+  gulp
+    .watch([config.html.SRC])
+    .on("all", gulp.series(moveHTML, browserSync.reload));
+
+  gulp
+    .watch([config.sass.SRC])
+    .on("all", gulp.series(sass, browserSync.reload));
+
+  done();
+}
+
+exports.default = gulp.series(clean, moveHTML, sass, javascript, server, watch);
