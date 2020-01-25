@@ -5,30 +5,22 @@
   </header>
 </template>
 
-<script>
-import Vue from "vue";
-
-export default Vue.extend({
-  name: "TopBar"
-});
-</script>
-
 <style scoped>
 header {
   background-color: #222;
   padding: 1rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
 }
 
 h1 {
   color: #fff;
   margin: 0;
+  display: inline;
+  vertical-align: middle;
 }
 
 img {
   width: 2rem;
+  vertical-align: middle;
 }
 
 h1 + img {

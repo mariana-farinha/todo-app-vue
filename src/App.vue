@@ -11,7 +11,6 @@ import TopBar from "./components/TopBar.vue";
 import TodoList from "./components/TodoList.vue";
 
 export default Vue.extend({
-  name: "app",
   components: {
     TopBar,
     TodoList
@@ -24,7 +23,6 @@ export default Vue.extend({
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 
